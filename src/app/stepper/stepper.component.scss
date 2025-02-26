@@ -1,0 +1,47 @@
+.stepper-container {
+  max-width: 600px; // Limit width to force horizontal scrolling of step headers
+  margin: 20px auto;
+  padding: 0 20px;
+  overflow-x: auto; // Enable horizontal scrolling
+  
+  // Style for the step headers container to make sure scrolling happens
+  ::ng-deep .mat-horizontal-stepper-header-container {
+    white-space: nowrap;
+    overflow-x: auto;
+    display: flex;
+    // Remove padding to make scrolling more obvious
+    padding: 0;
+  }
+
+  // Ensure step headers don't wrap and maintain equal width
+  ::ng-deep .mat-horizontal-stepper-header {
+    flex: 0 0 auto;
+    min-width: 120px; // Ensure minimum width for each step header
+    pointer-events: auto !important; // Ensure clickable
+  }
+
+  .form-content {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  mat-form-field {
+    width: 100%;
+  }
+}
+
+// Add styles for mobile view
+@media (max-width: 768px) {
+  .stepper-container {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+}
