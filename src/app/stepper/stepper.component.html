@@ -1,5 +1,5 @@
 <div class="stepper-container">
-  <mat-stepper [linear]="true" #stepper>
+  <mat-stepper  #stepper>
     <mat-step [stepControl]="personalInfoForm" label="Personal Info">
       <form [formGroup]="personalInfoForm">
         <div class="form-content">
@@ -110,4 +110,5 @@
       </form>
     </mat-step>
   </mat-stepper>
+  <button mat-flat-button color="primary" (click)="setStepTest()">Click</button>
 </div>
