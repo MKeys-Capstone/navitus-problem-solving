@@ -79,9 +79,10 @@ export class StepperComponent implements OnInit {
     });
   }
 
-  setStepTest() {
-    console.log(this.stepper);
-    this.stepper.selectedIndex = 4;
+  setStepTest(index: number) {
+    const header = this.stepper._stepHeader.get(index);
+    this.stepper.selectedIndex = index;
+    header?.focus();
   }
 
   submitForm() {
